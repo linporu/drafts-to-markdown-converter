@@ -20,7 +20,7 @@ A tool to convert JSON drafts into Markdown files with metadata and AI-generated
    - Fallback handling if API fails
 
 4. File Management
-   - Create filename format: `YYYY-MM-DD-title.md`
+   - Create filename format: `YYMMDD title.md`
    - Handle file naming conflicts
    - Organize files in appropriate directory structure
 
