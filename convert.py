@@ -1,4 +1,5 @@
 import json
+from helper import *
 import sys
 
 
@@ -11,8 +12,8 @@ def main():
         for draft in drafts:
             create_ts = draft["created_at"]
             content = draft["content"]
-            print(create_ts, content)
-
+            save(create_ts, content)
+            
 
 if __name__ == "__main__":
         main()
