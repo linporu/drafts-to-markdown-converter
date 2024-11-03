@@ -12,7 +12,8 @@ def main():
         for draft in drafts:
             create_ts = draft["created_at"]
             content = draft["content"]
-            save(create_ts, content)
+            file_name = f"{create_ts}.md"
+            save(file_name, content)
             
 
 if __name__ == "__main__":
