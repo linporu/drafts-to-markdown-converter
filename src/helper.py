@@ -49,21 +49,30 @@ def format_ts_datetime(timestamp):
 
 
 def format_content(timestamp, content):
-    content = f"""---
-        date: {format_ts_datetime(timestamp)}
-        aliases:
-        ---
-        Note Type:: #LiteratureNote 
-        Source Type:: 
-        Source URL:: 
-        Authur:: 
-        Topics:: 
-        Parent note:: 
-        Sibling note:: 
-        Child note:: 
-
-        ---
-
-        """ + content
+    """Format content with metadata
     
-    return content
+    Args:
+        timestamp: datetime object
+        content: original content string
+    
+    Returns:
+        str: formatted content with metadata
+    """
+    metadata = f"""---
+date: {format_ts_datetime(timestamp)}
+aliases:
+---
+Note Type:: #LiteratureNote 
+Source Type:: 
+Source URL:: 
+Author:: 
+Topics:: 
+Parent note:: 
+Sibling note:: 
+Child note:: 
+
+---
+
+"""
+    content = content.strip()
+    return metadata + content
