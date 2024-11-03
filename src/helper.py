@@ -29,3 +29,41 @@ def format_ts_YYMMDD(timestamp):
     """
     dt = datetime.datetime.strptime(timestamp, "%Y-%m-%dT%H:%M:%SZ")
     return dt.strftime("%y%m%d")
+
+
+def format_ts_datetime(timestamp):
+    """Convert ISO format timestamp to datetime format
+    
+    Args:
+        timestamp (str): ISO format timestamp string, e.g. '2024-09-20T14:21:59Z'
+        
+    Returns:
+        str: datetime format string, e.g. '2024-09-20 14:21'
+        
+    Example:
+        >>> format_ts_datetime('2024-09-20T14:21:59Z')
+        '2024-09-20 14:21'
+    """
+    dt = datetime.datetime.strptime(timestamp, "%Y-%m-%dT%H:%M:%SZ")
+    return dt.strftime("%Y-%m-%d %H:%M")
+
+
+def format_content(timestamp, content):
+    content = f"""---
+        date: {format_ts_datetime(timestamp)}
+        aliases:
+        ---
+        Note Type:: #LiteratureNote 
+        Source Type:: 
+        Source URL:: 
+        Authur:: 
+        Topics:: 
+        Parent note:: 
+        Sibling note:: 
+        Child note:: 
+
+        ---
+
+        """ + content
+    
+    return content

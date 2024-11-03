@@ -15,8 +15,10 @@ def main():
 
             # Format
             YYMMDD_ts = format_ts_YYMMDD(create_ts)
+            formatted_content = format_content(create_ts, content)
             file_name = f"{YYMMDD_ts}.md"
-            save(file_name, content)
+            
+            save(file_name, formatted_content)
             
 
 if __name__ == "__main__":
