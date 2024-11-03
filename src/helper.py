@@ -14,7 +14,7 @@ def save(file_name, content):
         return None
     
 
-def clean_ts_YYMMDD(timestamp):
+def format_ts_YYMMDD(timestamp):
     """Convert ISO format timestamp to YYMMDD format
     
     Args:

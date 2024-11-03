@@ -12,7 +12,10 @@ def main():
         for draft in drafts:
             create_ts = draft["created_at"]
             content = draft["content"]
-            file_name = f"{create_ts}.md"
+
+            # Format
+            YYMMDD_ts = format_ts_YYMMDD(create_ts)
+            file_name = f"{YYMMDD_ts}.md"
             save(file_name, content)
             
 
