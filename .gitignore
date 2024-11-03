@@ -1,6 +1,9 @@
 # Output folder
 output/
 
+# JSON outputted by Drafts
+DraftsExport.draftsExport
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
